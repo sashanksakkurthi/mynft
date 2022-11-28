@@ -1,0 +1,30 @@
+[tool.poetry]
+name = "apes-public"
+version = "0.1.0"
+description = ""
+authors = ["Madhav_Walia <madhavwalia8139@gmail.com>"]
+readme = "README.md"
+packages = [{include = "apes_public"}]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+torch = "1.12.0"
+numpy = "^1.23.4"
+Pillow = "^9.3.0"
+imageio = "^2.22.3"
+scipy = "^1.9.3"
+huggingface-hub = "^0.10.1"
+gradio = "^3.9.1"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.group.dev.dependencies]
+ipykernel = "^6.15.2"
+autopep8 = "^1.7.0"
+poethepoet = "^0.16.2"
+
+[tool.poe.tasks]
+force-cuda11 = "python -m pip install torch==1.8.0+cu111 torchvision==0.9.0+cu111 -f https://download.pytorch.org/whl/torch_stable.html"
